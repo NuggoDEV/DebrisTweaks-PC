@@ -10,10 +10,7 @@ namespace DebrisTweaks.HarmonyPatches
         public static void Postfix(NoteDebris __instance, ref Vector3 noteScale, ref Vector3 force, ref float ____lifeTime, ref MaterialPropertyBlockController ____materialPropertyBlockController, ref int ____colorID)
         {
             Config config = Config.Instance;
-
             if (!config.ModToggle) return;
-
-            #region Physics
 
             ____lifeTime = config.DebrisLifetimeToggle ? config.DebrisLifetime : ____lifeTime;
 
@@ -27,10 +24,6 @@ namespace DebrisTweaks.HarmonyPatches
             rb.drag = config.DragMultiplier;
             rb.useGravity = config.GravityToggle;
 
-            #endregion
-
-            #region Cosmetic
-
             Transform transform = __instance.transform;
             Renderer renderer = __instance.gameObject.GetComponentInChildren<Renderer>();
 
@@ -39,8 +32,6 @@ namespace DebrisTweaks.HarmonyPatches
                 ____materialPropertyBlockController.materialPropertyBlock.SetColor(____colorID, Color.gray);
                 ____materialPropertyBlockController.ApplyChanges();
             }
-
-            #endregion
         }
     }
 }
