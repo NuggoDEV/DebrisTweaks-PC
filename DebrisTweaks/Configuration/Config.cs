@@ -1,5 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 using IPA.Config.Stores;
+using UnityEngine;
 
 [assembly: InternalsVisibleTo(GeneratedStore.AssemblyVisibilityTarget)]
 namespace DebrisTweaks
@@ -16,7 +17,9 @@ namespace DebrisTweaks
         public bool RotationToggle { get; set; } = false;
 
         // Cosmetics VC
-        public bool MonochromeToggle { get; set; } = false;
+        public Color LeftColour { get; set; } = Color.red;
+        public Color RightColour { get; set; } = Color.blue;
+        public bool CustomColourToggle { get; set; } = false;
         public float DebrisScale { get; set; } = 1f;
         public bool DebrisLifetimeToggle { get; set; } = false;
         public float DebrisLifetime {  get; set; } = 1f;

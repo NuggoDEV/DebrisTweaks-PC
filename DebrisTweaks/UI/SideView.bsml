@@ -3,16 +3,16 @@
 		<text text='Cosmetic' font-size='6' align='Midline' italics='true'/>
 	</horizontal>
 	<vertical pref-width='80' pref-height='40' anchor-pos-y='-15'>
-		<toggle-setting apply-on-change="true" value="MonochromeToggle" id="MonochromeToggleID" text="Monochromatic Colours"/>
-		<slider-setting apply-on-change="true" value="DebrisScale" id="DebrisScaleID" text="Scale" show-buttons="true"  min="0" max="1.5" increment="0.1"/>
+		<toggle-setting apply-on-change='true' value='CustomColourToggle' id='CustomColourToggleID' text='Enable Custom Debris Colours' hover-hint='Default Value: False'/>
+		<color-setting apply-on-change='true' value='LeftColour' id='LeftColourID' text='Left Debris Colour' hover-hint='Default Value: 255, 0, 0'/>
+		<color-setting apply-on-change='true' value='RightColour' id='RightColourID' text='Right Debris Colour'  hover-hint='Default Value: 0, 0, 255'/>
+		<slider-setting apply-on-change="true" value="DebrisScale" id="DebrisScaleID" text="Scale" show-buttons="true"  min="0.1" max="2" increment="0.05"  hover-hint='Default Value: 1'/>
 
 		<text text=" " font-size="4"/>
 		
-		<toggle-setting apply-on-change="true" value="DebrisLifetimeToggle" id="DebrisLifetimeToggleID" text="Override Debris Lifetime"/>
-		<slider-setting apply-on-change="true" value="DebrisLifetime" id="DebrisLifetimeID" text="Lifespan" show-buttons="true" min="0.1" max="15" increment="0.05"/>
-		
-		<button text="Reset To Default" on-click="ResetCosmetics"/>
+		<toggle-setting apply-on-change="true" value="DebrisLifetimeToggle" id="DebrisLifetimeToggleID" text="Override Debris Lifetime" hover-hint='Default Value: False'/>
+		<slider-setting apply-on-change="true" value="DebrisLifetime" id="DebrisLifetimeID" text="Lifespan" show-buttons="true" min="0.1" max="15" increment="0.05" hover-hint='Default Value: 1'/>
 
-		<text text=" " font-size="26"/>
+		<text text=" " font-size="16"/>
 	</vertical>
 </bg>

@@ -4,7 +4,7 @@
   "name": "DebrisTweaks",
   "author": "Nuggo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Adds tweaks to the debris!",
   "gameVersion": "1.29.1",
   "dependsOn": {
     "BSIPA": "^4.2.2",

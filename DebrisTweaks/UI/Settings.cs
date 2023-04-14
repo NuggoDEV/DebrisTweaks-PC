@@ -1,5 +1,6 @@
 ﻿using BeatSaberMarkupLanguage;
 using BeatSaberMarkupLanguage.Attributes;
+using BeatSaberMarkupLanguage.Components;
 using BeatSaberMarkupLanguage.Components.Settings;
 using BeatSaberMarkupLanguage.MenuButtons;
 using BeatSaberMarkupLanguage.ViewControllers;
@@ -41,7 +42,7 @@ namespace DebrisTweaks.UI
 
         public static void Initialise()
         {
-            MenuButtons.instance.RegisterButton(menuButton ??= new MenuButton("Debris Tweaks", "Adds a few tweaks to debris", () =>
+            MenuButtons.instance.RegisterButton(menuButton ??= new MenuButton("Debris Tweaks", "Adds tweaks to the debris!", () =>
             {
                 if (flow == null)
                     flow = BeatSaberUI.CreateFlowCoordinator<DTFlow>();
@@ -61,12 +62,6 @@ namespace DebrisTweaks.UI
     internal class DTMainView : BSMLAutomaticViewController
     {
         Config config = Config.Instance;
-
-        [UIComponent("ModToggleID")] private ToggleSetting modToggle;
-        [UIComponent("VelocityMultID")] private SliderSetting velocityMult;
-        [UIComponent("DragMultID")] private SliderSetting dragMult;
-        [UIComponent("GravityToggleID")] private ToggleSetting gravityToggle;
-        [UIComponent("RotationToggleID")] private ToggleSetting rotationToggle;
 
         [UIValue("ModToggle")]
         private bool ModToggle
@@ -116,23 +111,6 @@ namespace DebrisTweaks.UI
                 }
             }
         }
-
-        [UIAction("ResetPhysics")]
-        private void ResetPhysics()
-        {
-            config.ModToggle = true;
-            config.VelocityMultiplier = 1f;
-            config.DragMultiplier = 1f;
-            config.GravityToggle = true;
-            config.RotationToggle = false;
-
-            modToggle.Value = config.ModToggle;
-            velocityMult.Value = config.VelocityMultiplier;
-            dragMult.Value = config.DragMultiplier;
-            gravityToggle.Value = config.GravityToggle;
-            rotationToggle.Value = config.RotationToggle;
-
-        }
     }
 
     [HotReload(RelativePathToLayout = @"./SideView.bsml")]
@@ -141,16 +119,25 @@ namespace DebrisTweaks.UI
     {
         Config config = Config.Instance;
 
-        [UIComponent("MonochromeToggleID")] private ToggleSetting monochromeToggle;
-        [UIComponent("DebrisScaleID")] private SliderSetting debrisScale;
-        [UIComponent("DebrisLifetimeToggleID")] private ToggleSetting debrisLifetimeToggle;
-        [UIComponent("DebrisLifetimeID")] private SliderSetting debrisLifetime;
-
-        [UIValue("MonochromeToggle")]
-        private bool MonochromeToggle
+        [UIValue("CustomColourToggle")]
+        private bool CustomColourToggle
         {
-            get => config.MonochromeToggle;
-            set => config.MonochromeToggle = value;
+            get => config.CustomColourToggle;
+            set => config.CustomColourToggle = value;
+        }
+
+        [UIValue("LeftColour")]
+        private Color LeftColour
+        {
+            get => config.LeftColour;
+            set => config.LeftColour = value;
+        }
+
+        [UIValue("RightColour")]
+        private Color RightColour
+        {
+            get => config.RightColour;
+            set => config.RightColour = value;
         }
 
         [UIValue("DebrisScale")]
@@ -172,20 +159,6 @@ namespace DebrisTweaks.UI
         {
             get => config.DebrisLifetime;
             set => config.DebrisLifetime = value;
-        }
-
-        [UIAction("ResetCosmetics")]
-        private void ResetCosmetics()
-        {
-            config.MonochromeToggle = false;
-            config.DebrisScale = 1f;
-            config.DebrisLifetimeToggle = false;
-            config.DebrisLifetime = 1f;
-
-            monochromeToggle.Value = config.MonochromeToggle;
-            debrisScale.Value = config.DebrisScale;
-            debrisLifetimeToggle.Value = config.DebrisLifetimeToggle;
-            debrisLifetime.Value = config.DebrisLifetime;
         }
     }
 
