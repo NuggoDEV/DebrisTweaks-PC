@@ -5,7 +5,7 @@
 	<vertical pref-width='80' pref-height='50' anchor-pos-y='-15'>
 		<toggle-setting apply-on-change='true' value='ModToggle' id='ModToggleID' text='Enable Debris Tweaks' hover-hint='Default Value: True'/>
 		
-		<slider-setting apply-on-change='true' value='VelocityMult' id='VelocityMultID' text='Velocity Multiplier' show-buttons='true' min='0.1' max='10' increment='0.1' hover-hint='Default Value: 1'/>
+		<slider-setting apply-on-change='true' value='VelocityMult' id='VelocityMultID' text='Velocity Multiplier' show-buttons='true' min='-10' max='10' increment='0.1' hover-hint='Default Value: 1'/>
 		<slider-setting apply-on-change='true' value='DragMult' id='DragMultID' text='Drag' show-buttons='true' min='0.1' max='15' increment='0.1' hover-hint='Default Value: 1'/>
 
 		<toggle-setting apply-on-change='true' value='GravityToggle' id='GravityToggleID' text='Enable Gravity' hover-hint='Default Value: True'/>
