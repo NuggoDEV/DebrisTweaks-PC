@@ -7,7 +7,7 @@ using IPA.Config.Stores;
 
 namespace DebrisTweaks
 {
-    [Plugin(RuntimeOptions.SingleStartInit)]
+    [Plugin(RuntimeOptions.DynamicInit)]
     public class Plugin
     {
         internal static Plugin Instance { get; private set; }

@@ -11,9 +11,6 @@
 		<toggle-setting apply-on-change='true' value='GravityToggle' id='GravityToggleID' text='Enable Gravity' hover-hint='Default Value: True'/>
 		<toggle-setting apply-on-change='true' value='RotationToggle' id='RotationToggleID' text='Prevent Rotations' hover-hint='Default Value: False'/>
 
-		<text text=' '/>
-		<action-button text='Test Debris' on-click='RunTestLevel'/>
-
-		<text text=' ' font-size='13.5'/>
+		<text text=' ' font-size='25'/>
 	</vertical>
 </bg>
