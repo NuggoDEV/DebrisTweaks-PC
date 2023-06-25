@@ -3,11 +3,11 @@
   "id": "DebrisTweaks",
   "name": "DebrisTweaks",
   "author": "Nuggo",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Adds tweaks to the debris!",
-  "gameVersion": "1.30.2",
+  "gameVersion": "1.30.0",
   "dependsOn": {
     "BSIPA": "^4.3.0",
-    "BeatSaberMarkupLanguage":  "^1.7.3"
+    "BeatSaberMarkupLanguage":  "^1.7.2"
   }
 } 

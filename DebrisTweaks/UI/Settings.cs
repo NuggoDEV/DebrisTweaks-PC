@@ -97,20 +97,6 @@ namespace DebrisTweaks.UI
             get => config.RotationToggle;
             set => config.RotationToggle = value;
         }
-
-        [UIAction("RunTestLevel")]
-        private void TestLevel()
-        {
-            SimpleLevelStarter[] simpleLevelStarters = Resources.FindObjectsOfTypeAll<SimpleLevelStarter>();
-            foreach (SimpleLevelStarter starter in simpleLevelStarters)
-            {
-                if (starter.gameObject.name.Contains("PerformanceTestLevelButton"))
-                {
-                    starter.StartLevel();
-                    return;
-                }
-            }
-        }
     }
 
     [HotReload(RelativePathToLayout = @"./SideView.bsml")]
